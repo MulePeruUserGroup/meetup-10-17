@@ -1,0 +1,11 @@
+.mule/
+.settings/
+catalog/
+.gradle/
+bin/
+${sys:mule.home}/
+.classpath
+.project
+mule-project.xml
+build/
+target/

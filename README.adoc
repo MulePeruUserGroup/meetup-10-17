@@ -1,0 +1,48 @@
+= Ejemplos del Primer Meetup
+
+== Pre requisitos
+
+* Java 7 u 8
+* Mule Standalone 3.7.0 [link:https://repository-master.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/3.7.0/mule-standalone-3.7.0.zip[Descargar]]
+* Maven (Opcional)
+* Gradle 2.4 (Opcional)
+
+== Construcción
+
+=== Maven
+
+[source,bash]
+---
+./mvnw clean package
+---
+
+Los artefactos se encuentran ubicados en la carpeta `target/` de su respectivo proyecto.
+
+* mule-intro-1.0.0-SNAPSHOT.zip
+* raml-intro-1.0.0-SNAPSHOT.zip
+
+=== Gradle
+
+[source,bash]
+---
+./gradlew clean build
+---
+
+Los artefactos se encuentran ubicados en la carpeta `build/` de su respectivo proyecto.
+
+* mule-intro-1.0.zip
+* raml-intro-1.0.zip
+
+Los artefactos deben ser copiados en la carpeta `apps` de `mule-standalone`.
+
+CAUTION: Ambos proyectos usan el mismo puerto. Deployarlos independientemente o modificar los puertos.
+
+Adicionalmente, gracias a gradle podremos ejecutar nuestra aplicación con un mule embebido. Sólo tenemos que ejecutar la siguiente tarea:
+
+[source,bash]
+---
+./gradlew mule-intro:runApp
+./gradlew raml-intro:runApp
+---
+
+NOTE: Leer el archivo README.adoc de cada proyecto.

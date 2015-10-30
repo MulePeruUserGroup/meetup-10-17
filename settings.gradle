@@ -1,0 +1,4 @@
+rootProject.name = "meetup-10-17"
+
+include "mule-intro"
+include "raml-intro"

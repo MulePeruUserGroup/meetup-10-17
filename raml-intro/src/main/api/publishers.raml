@@ -1,0 +1,70 @@
+#%RAML 0.8
+---
+title: Publisher API
+version: 1.0
+baseUri: http://localhost:8081/api
+securitySchemes: 
+  - basic:
+      type: Basic Authentication
+traits:
+  - secured:
+      description: Some requests require authentication      
+/publishers: 
+  securedBy : [basic]
+  is: [secured]
+  post:
+    body: 
+      application/json: 
+        example: |
+          {
+            "name" : "Marvel Comics"
+          }
+  get: 
+    responses: 
+      200: 
+        description: Devolvera todos los publishers del API
+        body: 
+          application/json: 
+            example: |
+              [{
+                "id" : 1,
+                "name" : "DC Comics"
+              },
+              {
+                "id" : 2,
+                "name" : "Marvel Comics"
+              }]
+      404:
+        description: Publishers no encontrado
+        body: 
+          application/json: 
+            example: |
+              {
+                "error" : "Publisher not found"
+              }                  
+/heros: 
+  securedBy : [basic]
+  is: [secured]
+  get: 
+    responses: 
+      200: 
+        description: Devolvera todos los publishers del API
+        body: 
+          application/json: 
+            example: |
+              [{
+                "id" : 1,
+                "name" : "DC Comics"
+              },
+              {
+                "id" : 2,
+                "name" : "Marvel Comics"
+              }]
+      404:
+        description: Publishers no encontrado
+        body: 
+          application/json: 
+            example: |
+              {
+                "error" : "Publisher not found"
+              }                          

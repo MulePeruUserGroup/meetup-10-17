@@ -1,0 +1,5 @@
+== Ejemplo de MuleESB
+
+Acceder a la url link:http://localhost:8081/api/saludo?name=Eddu[http://localhost:8081/api/saludo?name=Eddu]
+
+En la pantalla podremos apreciar el mensaje "Hola Eddu"
