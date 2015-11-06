@@ -53,6 +53,7 @@ http://www.mulesoft.org/schema/mule/spring-security http://www.mulesoft.org/sche
 	<flow name="post:/publishers:publishers-config">
 		<mule-ss:http-security-filter realm="mule-realm"
 			securityProviders="security-provider" />
+		<mule-ss:authorization-filter requiredAuthorities="ROLE_ADMIN" />
 		<set-payload value="#[NullPayload.getInstance()]"
 			doc:name="Set Payload" />
 	</flow>
